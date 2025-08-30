@@ -7,6 +7,17 @@
     android:background="#E8BC8A"
     tools:context=".activity.BookListActivity">
 
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Menú lateral"
+        android:src="@drawable/baseline_menu_24"  />
+
     <TextView
         android:id="@+id/tvTitleApp"
         android:layout_width="wrap_content"
@@ -150,4 +161,9 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

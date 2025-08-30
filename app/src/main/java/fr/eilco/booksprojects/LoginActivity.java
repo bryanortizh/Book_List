@@ -1,6 +1,7 @@
 package fr.eilco.booksprojects;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -58,6 +59,9 @@ public class LoginActivity extends AppCompatActivity {
                     os.close();
                     int responseCode = conn.getResponseCode();
                     if (responseCode == 200) {
+                        // Guardar correo en SharedPreferences
+                        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                        prefs.edit().putString("Correo", Correo).apply();
                         Intent intent = new Intent(LoginActivity.this, BookListActivity.class);
                         startActivity(intent);
                         finish();

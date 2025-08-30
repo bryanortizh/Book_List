@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="70dp"
-        android:text="Author : "
+        android:text="Autor : "
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitleBook" />
@@ -44,7 +44,7 @@
         android:layout_width="225dp"
         android:layout_height="55dp"
         android:layout_marginStart="150dp"
-        android:text="AuthorName"
+        android:text="Nombre del Autor"
         android:textColor="#1913F3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvAuthorMetaDAta" />
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Publish Year : "
+        android:text="Fecha de Publicación : "
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvAuthorMetaDAta"
         app:layout_constraintTop_toBottomOf="@+id/tvAuthorMetaDAta" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Number Pages : "
+        android:text="Número de Páginas : "
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvBookYearMetaData"
         app:layout_constraintTop_toBottomOf="@+id/tvBookYearMetaData" />
@@ -74,7 +74,7 @@
         android:layout_width="225dp"
         android:layout_height="55dp"
         android:layout_marginStart="150dp"
-        android:text="PublishYear"
+        android:text="Fecha de Publicación"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvBookYearMetaData" />
 
@@ -83,7 +83,7 @@
         android:layout_width="225dp"
         android:layout_height="55dp"
         android:layout_marginStart="150dp"
-        android:text="PageNumber"
+        android:text="Número de Páginas"
         android:textColor="#5C2828"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvPageNumberMetaData" />
@@ -103,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Click Here To See The Book"
+        android:text="Clic aquí para ver el libro"
         android:textColor="#2F25E8"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

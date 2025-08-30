@@ -7,14 +7,21 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.eilco.booksprojects.LoginActivity;
 import fr.eilco.booksprojects.R;
 import fr.eilco.booksprojects.adapters.BookListAdapter;
 import fr.eilco.booksprojects.data.AuthorData;
@@ -50,6 +57,29 @@ public class BookListActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
+
+        ImageButton btnMenu = findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(v -> {
+            PopupMenu popup = new PopupMenu(BookListActivity.this, btnMenu);
+            popup.getMenu().add("Perfil");
+            popup.getMenu().add("Cerrar sesión");
+            popup.setOnMenuItemClickListener(item -> {
+                if (item.getTitle().equals("Cerrar sesión")) {
+                    Intent intent = new Intent(BookListActivity.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                } else if (item.getTitle().equals("Perfil")) {
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction();
+                    ft.replace(android.R.id.content, new ProfileFragment());
+                    ft.addToBackStack(null);
+                    ft.commit();
+                }
+                return true;
+            });
+            popup.show();
+        });
 
         ImageView ivSearchImageView = findViewById(R.id.ivSearch);
         ivSearchImageView.setOnClickListener(new View.OnClickListener() {

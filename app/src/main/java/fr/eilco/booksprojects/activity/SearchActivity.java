@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         TextView helloTextView = findViewById(R.id.searchTextView);
-        helloTextView.setText("Recherche de Books");
+        helloTextView.setText("Resultado de búsquedas");
     }
 
     private void performSearch() {
