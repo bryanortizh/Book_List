@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
                     os.close();
                     int responseCode = conn.getResponseCode();
                     if (responseCode == 200) {
-                        // Guardar correo en SharedPreferences
                         SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
                         prefs.edit().putString("Correo", Correo).apply();
                         Intent intent = new Intent(LoginActivity.this, BookListActivity.class);
