@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Biographie : "
+        android:text="Biografía : "
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAuthorName" />
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Birth/Death :"
+        android:text="Fecha de muerte :"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/svAuthorBio"
         app:layout_constraintTop_toBottomOf="@+id/svAuthorBio" />
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:text="BirthDate"
+        android:text="Fecha de nacimiento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Links : "
+        android:text="Enlaces : "
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/svAuthorBio"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
