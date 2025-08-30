@@ -59,22 +59,18 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookVi
                 }
             }
 
-            // Gestion du clic sur la carte
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // Récupérer le livre associé à cette carte
                     int position = holder.getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         String keyBook = book.getKey();
-                        if (keyBook != null) { // Vérifier si keyBook n'est pas nulle
-                            // Ouvrir une nouvelle activité en transmettant les données du livre
+                        if (keyBook != null) { 
                             Intent intent = new Intent(view.getContext(), BookActivity.class);
                             intent.putExtra("BOOK_KEY", keyBook);
                             intent.putExtra("BookListName", listName);
                             view.getContext().startActivity(intent);
                         } else {
-                            // Afficher un message d'alerte si keyBook est nulle
                             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                             builder.setMessage("Erreur sur les informartions du livre !");
                             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {

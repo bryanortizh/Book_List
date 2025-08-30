@@ -35,17 +35,17 @@ public interface ImageBookGetRequestCallback {
                         Bitmap image = GetRequest.convertResponseBodyToBitmap(response.body());
                         ImageData.getInstance().addImage(isbn, image);
                         book.setPrincipalIsbn(isbn);
-                        callback.onSuccess(image); // Passer les données au callback
+                        callback.onSuccess(image); 
                         return;
                     }
                 }
             }
-            callback.onFailure(); // Signaler l'échec au callback
+            callback.onFailure(); 
         }
 
         @Override
         public void onFailure(Call<ResponseBody> call, Throwable t) {
-            callback.onFailure(); // Signaler l'échec au callback
+            callback.onFailure(); 
         }
     }
 }

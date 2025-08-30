@@ -72,7 +72,7 @@ public class GetRequest {
                                     Bitmap image = GetRequest.convertResponseBodyToBitmap(response.body());
                                     ImageData.getInstance().addImage(isbn, image);
                                     book.setPrincipalIsbn(isbn);
-                                    callback.onSuccess(image); // Passer les données au callback
+                                    callback.onSuccess(image); 
                                     return;
                                 }
                             }

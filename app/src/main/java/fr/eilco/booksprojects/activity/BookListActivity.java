@@ -68,7 +68,6 @@ public class BookListActivity extends AppCompatActivity {
         rvFavorite = findViewById(R.id.rvFavorites);
 
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
-        // Obtenez les DAO KeyValueDao et BookDao
         BookDao bookDao = db.bookDao();
 
         new AsyncTask<Void, Void, Void>() {

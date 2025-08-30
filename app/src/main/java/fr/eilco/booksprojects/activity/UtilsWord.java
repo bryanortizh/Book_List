@@ -20,7 +20,6 @@ public final class UtilsWord {
         InputStream inputStream = context.getResources().openRawResource(R.raw.liste_mots);
         ArrayList<String> mots = new ArrayList<>();
 
-        // Lire le fichier
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -31,7 +30,6 @@ public final class UtilsWord {
             e.printStackTrace();
         }
 
-        // Générer un mot au hasard
         if (!mots.isEmpty()) {
             Random random = new Random();
             int index = random.nextInt(mots.size());

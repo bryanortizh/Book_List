@@ -53,7 +53,6 @@ public class SearchBookListAdapter extends RecyclerView.Adapter<SearchBookListAd
                 imageView.setImageBitmap(ImageData.getInstance().getImage(isbn));
             }
 
-            // Handle click on the item
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

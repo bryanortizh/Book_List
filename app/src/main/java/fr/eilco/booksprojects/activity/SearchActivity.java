@@ -76,7 +76,7 @@ public class SearchActivity extends AppCompatActivity {
                 public void onSuccess(List<Book> books) {
                     searchList = new BookData(books);
                     searchResults.setBooks(books);
-                    adapter.updateBooks(books);  // Use the new method to update data
+                    adapter.updateBooks(books);
                     searchTextView.setText(getString(R.string.search_results, searchQuery));
 
                     for (Book bookItem:searchList.getBooks()){

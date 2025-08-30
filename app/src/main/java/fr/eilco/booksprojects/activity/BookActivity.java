@@ -40,7 +40,6 @@ public class BookActivity extends AppCompatActivity {
             String bookListName = intent.getStringExtra("BookListName");
 
             AppDatabase db = AppDatabase.getInstance(getApplicationContext());
-            // Obtenez les DAO KeyValueDao et BookDao
             BookDao bookDao = db.bookDao();
             ImageView starImage = findViewById(R.id.ivStarBook);
 
@@ -88,7 +87,6 @@ public class BookActivity extends AppCompatActivity {
                         newIntent.putExtra("AUTHOR_KEY", authorKey);
                         startActivity(newIntent);
                     } else {
-                        // Afficher un message d'alerte si authorKey est nulle
                         AlertDialog.Builder builder = new AlertDialog.Builder(BookActivity.this);
                         builder.setMessage("Erreur de recuperation des données de l'auteur !");
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -106,18 +104,14 @@ public class BookActivity extends AppCompatActivity {
                 starImage.setOnClickListener(view -> {
                     boolean isStared = !book.isStar();
 
-                    // mise à jour de l'image Star
                     if (isStared) {
                         starImage.setImageResource(android.R.drawable.btn_star_big_on);
                         book.setStar(true);
 
-                        // Utilisez AsyncTask pour insérer le livre dans la base de données Room
                         new AsyncTask<Void, Void, List<Book>>() {
                             @Override
                             protected List<Book> doInBackground(Void... voids) {
-                                // Vérifiez d'abord si le livre existe dans la base de données
                                 if (!bookDao.containsBook(book.getKey())) {
-                                    // Aucun livre similaire trouvé, vous pouvez insérer le nouveau livre
                                     bookDao.insert(book);
                                     BookListActivity.favoriteList.getBooks().add(book);
                                 }
@@ -130,7 +124,6 @@ public class BookActivity extends AppCompatActivity {
                         }.execute();
                     } else {
                         starImage.setImageResource(android.R.drawable.btn_star_big_off);
-                        // mise à jour de l'état du livre
                         new AsyncTask<Void, Void, Void>() {
                             @Override
                             protected Void doInBackground(Void... voids) {
